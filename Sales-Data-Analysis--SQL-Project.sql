@@ -7,7 +7,7 @@ END
 USE walmart;
 CREATE TABLE sales(
     invoice_id VARCHAR(30) NOT NULL PRIMARY KEY,
-    --branch VARCHAR(5) NOT NULL,
+    branch VARCHAR(5) NOT NULL,
     city VARCHAR(30) NOT NULL,
     customer_type VARCHAR(30) NOT NULL,
     gender VARCHAR(10) NOT NULL,
@@ -43,7 +43,7 @@ ALTER COLUMN unit_price DECIMAL(12, 4);  -- Adjust precision if necessary
 
 CREATE TABLE sales_staging (
     invoice_id VARCHAR(30),
-    --branch VARCHAR(5),
+    branch VARCHAR(5),
     city VARCHAR(30),
     customer_type VARCHAR(30),
     gender VARCHAR(10),
@@ -61,8 +61,8 @@ CREATE TABLE sales_staging (
     rating VARCHAR(30)        -- Temporarily use VARCHAR to capture any value
 );
 
---ALTER TABLE sales
---ALTER COLUMN branch CHAR(10); 
+ALTER TABLE sales
+ALTER COLUMN branch CHAR(10); 
 
 DROP TABLE sales_staging;
 
